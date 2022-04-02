@@ -14,9 +14,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('utama');
+    return view('utama', [
+        "title" => "Selamat Datang di SiPerpus"
+    ]);
 });
 
 Route::get('/daftar', function () {
-    return view('daftar');
+    return view('daftar',[
+        "title" => "Daftar Akun Baru"
+    ]);
 });
