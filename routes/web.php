@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Daftar_c;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,8 +20,11 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/daftar', function () {
-    return view('daftar',[
-        "title" => "Daftar Akun Baru"
-    ]);
-});
+// Route::get('/daftar', function () {
+//     return view('daftar',[
+//         "title" => "Daftar Akun Baru"
+//     ]);
+// });
+
+Route::get('/daftar', [Daftar_c::class,'index']);
+Route::post('/daftar', [Daftar_c::class,'store']);
