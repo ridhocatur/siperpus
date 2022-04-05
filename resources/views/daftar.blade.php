@@ -13,52 +13,52 @@
             <form action="/daftar" method="post">
                 @csrf
               <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Nama Lengkap">
-                <div class="input-group-append">
-                  <div class="input-group-text">
-                    <span class="fas fa-user"></span>
-                  </div>
-                </div>
+                <input type="text" name="nama" id="nama" class="form-control @error('nama') is-invalid @enderror" placeholder="Nama Lengkap" value="{{ old('nama') }}">
+                @error('nama')
+                    <div class="invalid-feedback">
+                        {{$message}}
+                    </div>
+                @enderror
               </div>
               <div class="input-group mb-3">
-                <input type="email" class="form-control" placeholder="Email">
-                <div class="input-group-append">
-                  <div class="input-group-text">
-                    <span class="fas fa-envelope"></span>
-                  </div>
-                </div>
+                <input type="email" name="email" id="email" class="form-control @error('email') is-invalid @enderror" placeholder="Email" value="{{ old('nama') }}">
+                @error('email')
+                    <div class="invalid-feedback">
+                        {{$message}}
+                    </div>
+                @enderror
               </div>
               <div class="input-group mb-3">
-                <input type="username" class="form-control" placeholder="Username">
-                <div class="input-group-append">
-                  <div class="input-group-text">
-                    <span class="fas fa-id-badge"></span>
-                  </div>
-                </div>
+                <input type="text" name="telp" id="telp" class="form-control @error('telp') is-invalid @enderror" placeholder="Nomor Telepon" value="{{ old('nama') }}">
+                @error('telp')
+                    <div class="invalid-feedback">
+                        {{$message}}
+                    </div>
+                @enderror
               </div>
               <div class="input-group mb-3">
-                <input type="telp" class="form-control" placeholder="Nomor Telepon">
-                <div class="input-group-append">
-                  <div class="input-group-text">
-                    <span class="fas fa-phone"></span>
-                  </div>
-                </div>
+                <input type="text" name="user" id="user" class="form-control @error('user') is-invalid @enderror" placeholder="Username" value="{{ old('nama') }}">
+                @error('user')
+                    <div class="invalid-feedback">
+                        {{$message}}
+                    </div>
+                @enderror
               </div>
               <div class="input-group mb-3">
-                <input type="password" class="form-control" placeholder="Password">
-                <div class="input-group-append">
-                  <div class="input-group-text">
-                    <span class="fas fa-lock"></span>
-                  </div>
-                </div>
+                <input type="password" name="pass" id="pass" class="form-control @error('pass') is-invalid @enderror" placeholder="Password">
+                @error('pass')
+                    <div class="invalid-feedback">
+                        {{$message}}
+                    </div>
+                @enderror
               </div>
               <div class="input-group mb-3">
-                <input type="password" class="form-control" placeholder="Ulangi Password">
-                <div class="input-group-append">
-                  <div class="input-group-text">
-                    <span class="fas fa-lock"></span>
-                  </div>
-                </div>
+                <input type="password" name="u_pass" id="u_pass" class="form-control @error('u_pass') is-invalid @enderror" placeholder="Ulangi Password">
+                @error('u_pass')
+                    <div class="invalid-feedback">
+                        {{$message}}
+                    </div>
+                @enderror
               </div>
               <div class="row">
                 <div class="col-8">
