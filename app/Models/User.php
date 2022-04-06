@@ -23,9 +23,8 @@ class User extends Authenticatable
         'nama',
         'email',
         'telp',
-        'username',
-        'password',
-        'created_date'
+        'user',
+        'pass'
     ];
 
     protected $guarded = [
@@ -50,6 +49,7 @@ class User extends Authenticatable
      * @var array<string, string>
      */
     protected $casts = [
-        'email_verified_at' => 'datetime',
+        'email_verified_at' => 'datetime'
+        // 'created_date'      => 'date'
     ];
 }

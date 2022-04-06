@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\Rules\Unique;
 
 class Daftar_c extends Controller
 {
@@ -16,20 +17,24 @@ class Daftar_c extends Controller
 
     public function store(Request $regis){
 
-        $randomNumber = random_int(100000, 999999); //masih not work
-
         $validasi = $regis->validate([
             'nama'  => 'max:50',
             'telp'  => 'numeric',
             'email' => 'required|email:dns|unique:user,email',
-            'user'  => 'required|min:5|max:25|unique:user,username',
+            'user'  => 'required|min:5|max:25|unique:user,user',
             'pass'  => 'required|min:8'
         ]);
 
-        $validasi['pass'] = Hash::make($validasi['pass']);
-        $validasi['id']   = $randomNumber; //masih not work
+        $validasi = new User;
+        $validasi->id    = uniqid();
+        $validasi->nama  = $regis->nama;
+        $validasi->telp  = $regis->telp;
+        $validasi->email = $regis->email;
+        $validasi->user  = $regis->user;
+        $validasi->pass  = Hash::make($regis->pass);
+        $validasi->roles = "2";
 
-        User::create($validasi);
+        $validasi->save();
 
         return view('Anjay MAsuk');
     }
