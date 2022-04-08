@@ -34,7 +34,7 @@
             </ul>
 
             <div class="text-end">
-              <button type="button" class="btn btn-outline-light me-2">Login</button>
+              <a href="login" class="btn btn-outline-light me-2">Login</a>
               <a href="daftar" class="btn btn-warning">Daftar</a>
             </div>
           </div>

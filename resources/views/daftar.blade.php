@@ -62,12 +62,7 @@
               </div>
               <div class="row">
                 <div class="col-8">
-                  <div class="icheck-primary">
-                    <input type="checkbox" id="agreeTerms" name="terms" value="agree">
-                    <label for="agreeTerms">
-                     I agree to the <a href="#">terms</a>
-                    </label>
-                  </div>
+                    <a href="login" class="text-center">Login Disini</a>
                 </div>
                 <!-- /.col -->
                 <div class="col-4">
@@ -76,8 +71,6 @@
                 <!-- /.col -->
               </div>
             </form>
-
-            <a href="login" class="text-center">Sudah Punya Akun ?</a>
           </div>
           <!-- /.form-box -->
         </div><!-- /.card -->
