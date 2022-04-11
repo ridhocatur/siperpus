@@ -2,6 +2,11 @@
 
 @section('main')
 <div class="hold-transition login-page">
+    @if (session('sukses'))
+    <div class="alert alert-success" role="alert">
+        {{ session('sukses') }}
+    </div>
+    @endif
     <div class="login-box">
     <!-- /.login-logo -->
     <div class="card card-outline card-primary">
