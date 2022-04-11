@@ -21,7 +21,7 @@
                 @enderror
               </div>
               <div class="input-group mb-3">
-                <input type="email" name="email" id="email" class="form-control @error('email') is-invalid @enderror" placeholder="Email" value="{{ old('nama') }}">
+                <input type="email" name="email" id="email" class="form-control @error('email') is-invalid @enderror" placeholder="Email" value="{{ old('email') }}">
                 @error('email')
                     <div class="invalid-feedback">
                         {{$message}}
@@ -29,7 +29,7 @@
                 @enderror
               </div>
               <div class="input-group mb-3">
-                <input type="text" name="telp" id="telp" class="form-control @error('telp') is-invalid @enderror" placeholder="Nomor Telepon" value="{{ old('nama') }}">
+                <input type="text" name="telp" id="telp" class="form-control @error('telp') is-invalid @enderror" placeholder="Nomor Telepon" value="{{ old('telp') }}">
                 @error('telp')
                     <div class="invalid-feedback">
                         {{$message}}
@@ -37,7 +37,7 @@
                 @enderror
               </div>
               <div class="input-group mb-3">
-                <input type="text" name="user" id="user" class="form-control @error('user') is-invalid @enderror" placeholder="Username" value="{{ old('nama') }}">
+                <input type="text" name="user" id="user" class="form-control @error('user') is-invalid @enderror" placeholder="Username" value="{{ old('user') }}">
                 @error('user')
                     <div class="invalid-feedback">
                         {{$message}}
