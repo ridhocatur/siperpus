@@ -9,7 +9,6 @@
           </div>
           <div class="card-body">
             <p class="login-box-msg">Daftar Sebagai Member Baru</p>
-
             <form action="/daftar" method="post">
                 @csrf
               <div class="input-group mb-3">

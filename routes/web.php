@@ -26,4 +26,4 @@ Route::get('daftar', [Daftar_c::class,'index']);
 Route::post('daftar', [Daftar_c::class,'store']);
 
 Route::get('login', [Login_c::class,'index']);
-Route::post('masuk', [Login_c::class,'masuk']);
+Route::post('login', [Login_c::class,'masuk']);

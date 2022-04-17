@@ -48,6 +48,9 @@
             <!-- /.col -->
           </div>
         </form>
+        <p class="mb-0">
+          <a href="daftar" class="text-center">Belum Punya Akun ?</a>
+        </p>
       </div>
       <!-- /.card-body -->
     </div>
