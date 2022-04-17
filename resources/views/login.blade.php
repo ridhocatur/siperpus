@@ -2,9 +2,9 @@
 
 @section('main')
 <div class="hold-transition login-page">
-    @if (session('sukses'))
+    @if (session('alert'))
     <div class="alert alert-success" role="alert">
-        {{ session('sukses') }}
+        {{ session('alert') }}
     </div>
     @endif
     <div class="login-box">
@@ -14,59 +14,40 @@
         <a href="/" class="h1"><b>Si</b>Perpus</a>
       </div>
       <div class="card-body">
-        <p class="login-box-msg">Sign in to start your session</p>
+        <p class="login-box-msg">Silahkan Masuk Dengan Sopan</p>
 
-        <form action="/login" method="post">
+        <form action="masuk" method="post">
             @csrf
-          <div class="input-group mb-3">
-            <input type="email" class="form-control" placeholder="Email">
-            <div class="input-group-append">
-              <div class="input-group-text">
-                <span class="fas fa-envelope"></span>
-              </div>
+            <div class="input-group mb-3">
+                <input type="text" name="user" id="user" class="form-control @error('user') is-invalid @enderror" placeholder="Username" value="{{ old('user') }}" autofocus>
+                @error('user')
+                    <div class="invalid-feedback">
+                        {{$message}}
+                    </div>
+                @enderror
             </div>
-          </div>
-          <div class="input-group mb-3">
-            <input type="password" class="form-control" placeholder="Password">
-            <div class="input-group-append">
-              <div class="input-group-text">
-                <span class="fas fa-lock"></span>
-              </div>
+
+            <div class="input-group mb-3">
+                <input type="password" name="pass" id="pass" class="form-control @error('pass') is-invalid @enderror" placeholder="Password">
+                @error('pass')
+                    <div class="invalid-feedback">
+                        {{$message}}
+                    </div>
+                @enderror
             </div>
-          </div>
           <div class="row">
             <div class="col-8">
-              <div class="icheck-primary">
-                <input type="checkbox" id="remember">
-                <label for="remember">
-                  Remember Me
-                </label>
-              </div>
+                <p class="mb-0">
+                    <a href="daftar" class="text-center">Belum Punya Akun ?</a>
+                </p>
             </div>
             <!-- /.col -->
             <div class="col-4">
-              <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+              <button type="submit" class="btn btn-primary btn-block">Masuk</button>
             </div>
             <!-- /.col -->
           </div>
         </form>
-
-        <div class="social-auth-links text-center mt-2 mb-3">
-          <a href="#" class="btn btn-block btn-primary">
-            <i class="fab fa-facebook mr-2"></i> Sign in using Facebook
-          </a>
-          <a href="#" class="btn btn-block btn-danger">
-            <i class="fab fa-google-plus mr-2"></i> Sign in using Google+
-          </a>
-        </div>
-        <!-- /.social-auth-links -->
-
-        <p class="mb-1">
-          <a href="forgot-password.html">I forgot my password</a>
-        </p>
-        <p class="mb-0">
-          <a href="register.html" class="text-center">Register a new membership</a>
-        </p>
       </div>
       <!-- /.card-body -->
     </div>
