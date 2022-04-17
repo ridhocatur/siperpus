@@ -43,10 +43,11 @@ class Daftar_c extends Controller
         $validasi->email = $regis->email;
         $validasi->user  = $regis->user;
         $validasi->pass  = Hash::make($regis->pass);
+        // $validasi->pass  = $regis->pass;
         $validasi->roles = "2";
 
         $validasi->save();
 
-        return redirect('/login')->with('sukses', 'Pendaftaran Berhasil, Silahkan Login !');
+        return redirect('/login')->with('alert', 'Pendaftaran Berhasil, Silahkan Login !');
     }
 }
